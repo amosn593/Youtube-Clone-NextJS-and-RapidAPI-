@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Stack } from '@mui/material';
 import { logo } from '../../utils/constants';
+import SearchBar from './SearchBar';
 
 const TopNavbar = () => {
   return (
@@ -21,6 +22,7 @@ const TopNavbar = () => {
           <Image src={logo} alt="log" width={45} height={45} />
         </a>
       </Link>
+      <SearchBar />
     </Stack>
   );
 };
