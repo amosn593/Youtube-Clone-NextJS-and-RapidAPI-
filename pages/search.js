@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react';
 import { Typography, Box } from '@mui/material';
 import { useRouter } from 'next/router';
-import { fetchFromAPI } from '../../utils/fetchFromAPI';
-import Videos from '../components/Videos';
+import { fetchFromAPI } from '../utils/fetchFromAPI';
+import Videos from './components/Videos';
 
-function SearchFeed() {
+function Search() {
   const [videos, setVideos] = useState(null);
 
   const router = useRouter();
-  const { searchTerm } = router.query;
+  const { query } = router;
+
+  const searchTerm = query.searchTerm;
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${searchTerm}`).then((data) =>
       setVideos(data.items),
     );
   }, [searchTerm]);
-
   return (
     <Box sx={{ backgroundColor: '#000' }} p={2} minHeight="95vh">
       <Typography
@@ -36,4 +37,4 @@ function SearchFeed() {
   );
 }
 
-export default SearchFeed;
+export default Search;

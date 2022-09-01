@@ -11,7 +11,7 @@ function SearchBar() {
     e.preventDefault();
 
     if (searchTerm) {
-      router.push(`/search/${searchTerm}`);
+      router.push(`/search?searchTerm=${searchTerm}`);
 
       setSearchTerm('');
     }
