@@ -7,7 +7,7 @@ import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import { Box } from '@mui/material';
 import TopNavbar from './components/TopNavbar';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import '../styles/globals.css';
 
 // Client-side cache shared for the whole session
@@ -34,7 +34,7 @@ export default function MyApp(props) {
 
           <Component {...pageProps} />
 
-          <Footer />
+          {/* <Footer /> */}
         </Box>
       </ThemeProvider>
     </CacheProvider>

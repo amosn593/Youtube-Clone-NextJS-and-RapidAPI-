@@ -8,19 +8,18 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('New');
-  const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState(null);
 
   useEffect(() => {
     setVideos([]);
 
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
       .then(function (data) {
-        console.log(data);
         setVideos(data.items);
       })
       .catch(function (error) {
         // handle error
-        console.log(error);
+
         setVideos([]);
       });
   }, [selectedCategory]);
