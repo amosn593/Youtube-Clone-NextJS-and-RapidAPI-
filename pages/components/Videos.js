@@ -5,7 +5,7 @@ import Loader from './Loader';
 
 function Videos({ videos, direction }) {
   if (!videos?.length) return <Loader />;
-  
+
   return (
     <Stack
       direction={direction || 'row'}

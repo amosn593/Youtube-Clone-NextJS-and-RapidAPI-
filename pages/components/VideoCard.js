@@ -10,12 +10,11 @@ import {
   demoChannelTitle,
 } from '../../utils/constants';
 
-function VideoCard({
-  video: {
-    id: { videoId },
-    snippet,
-  },
-}) {
+const VideoCard = ({ video }) => {
+  const videoId = video?.id?.videoId || null;
+
+  const snippet = video?.snippet || null;
+
   return (
     <Card
       sx={{
@@ -54,6 +53,6 @@ function VideoCard({
       </CardContent>
     </Card>
   );
-}
+};
 
 export default VideoCard;
